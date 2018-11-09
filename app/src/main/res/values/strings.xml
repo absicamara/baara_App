@@ -24,4 +24,11 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="username">Username</string>
+    <string name="user_status">Recruter / Applicant</string>
+    <string name="job_center">Job Center</string>
+    <string name="notifications">Notifications</string>
+    <string name="my_offers">My Offers</string>
+    <string name="share_this_app">Share this app</string>
+    <string name="communicate">Communicate</string>
 </resources>
