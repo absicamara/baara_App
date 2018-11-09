@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="185" />
+                                                <entry key="scalingPercent" value="125" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -36,8 +36,8 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
-                                      <entry key="foregroundImage" value="C:\Users\slash\Pictures\BAARA\baaraLogo.png" />
-                                      <entry key="outputName" value="baara_logo" />
+                                      <entry key="foregroundImage" value="C:\Users\slash\Pictures\BAARA\avatar2.png" />
+                                      <entry key="outputName" value="default_avatar" />
                                     </map>
                                   </option>
                                 </PersistentState>

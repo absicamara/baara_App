@@ -20,7 +20,7 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         splashVideo = (VideoView) findViewById(R.id.splashVD);
-//        getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         Uri vd = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splashvideo);
         splashVideo.setVideoURI(vd);
