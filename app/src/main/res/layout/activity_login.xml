@@ -87,7 +87,7 @@
                 android:background="@drawable/my_button_orange" />
 
             <Button
-                android:id="@+id/registerBtn"
+                android:id="@+id/btn_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
