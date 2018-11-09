@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.VideoView;
 
@@ -18,6 +19,9 @@ public class Splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_splash);
+
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
 
         splashVideo = (VideoView) findViewById(R.id.splashVD);
         getSupportActionBar().hide();

@@ -32,4 +32,6 @@
     <string name="share_this_app">Share this app</string>
     <string name="communicate">Communicate</string>
     <string name="prompt_password_confirm">Confirm password</string>
+    <string name="already_registered">Already registered ?</string>
+    <string name="register_btn">Register</string>
 </resources>
