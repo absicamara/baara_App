@@ -3,6 +3,7 @@ package net.geeksh.baaraapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView mForgortPasswordEditView;
     private Button btnSignup;
     private Button btnSignin;
+    private ProgressDialog progressDialog;
 
     private FirebaseAuth firebaseAuth;
 
@@ -69,9 +71,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().hide();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
+
 
          mLoginFormEditView = (EditText) findViewById(R.id.email);
-//         mProgressView = (EditText) findViewById(R.id.email);;
          mPasswordEditView = (EditText) findViewById(R.id.password);;
          btnSignup = (Button) findViewById(R.id.btn_signup);;
          btnSignin = (Button) findViewById(R.id.email_sign_in_button);
@@ -83,27 +86,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mForgortPasswordEditView.setOnClickListener(this);
     }
 
-    private void signUser(){
+    protected void signUser(){
 
             String emailData = mLoginFormEditView.getText().toString().trim();
             String passwordData = mPasswordEditView.getText().toString().trim();
 
             if(TextUtils.isEmpty(emailData)){
-                Toast.makeText(LoginActivity.this, "Email is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.empty_email, Toast.LENGTH_SHORT).show();
+                return;
             }
 
             if(TextUtils.isEmpty(emailData)){
-                Toast.makeText(LoginActivity.this, "Password is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.empty_password, Toast.LENGTH_SHORT).show();
+                return;
             }
 
-            firebaseAuth.signInWithEmailAndPassword(emailData, passwordData)
+        progressDialog.setMessage("Logging in user. Please wait...");
+        progressDialog.show();
+
+
+        firebaseAuth.signInWithEmailAndPassword(emailData, passwordData)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            progressDialog.dismiss();
+
                             if (task.isSuccessful()){
                                 Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                 finish();
+                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                             }else {
                                 try {
                                     throw task.getException();
@@ -130,6 +142,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (view == btnSignup){
             startActivity(new Intent(getApplicationContext(), SignupActivity.class));
         }
+
         if (view == mForgortPasswordEditView){
             Toast.makeText(this, R.string.Function_not_active, Toast.LENGTH_SHORT).show();
         }

@@ -6,20 +6,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/job_center"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_view_list_black_24dp"
             android:title="@string/job_center" />
         <item
             android:id="@+id/notification"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_notifications_active_black_24dp"
             android:title="@string/notifications" />
         <item
             android:id="@+id/my_offers"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_business_center_black_24dp"
+            android:title="@string/my_offers" />
+
+        <item
+            android:id="@+id/my_account"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
             android:title="@string/my_offers" />
 
     </group>
 
-    <item android:title="@string/communicate">
+    <item android:title="@string/more_options">
         <menu>
             <item
                 android:id="@+id/share_app"
@@ -28,7 +33,7 @@
 
             <item
                 android:id="@+id/logout"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_keyboard_return_black_24dp"
                 android:title="@string/sign_out" />
         </menu>
     </item>

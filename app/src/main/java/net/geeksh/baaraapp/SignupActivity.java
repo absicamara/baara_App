@@ -55,6 +55,14 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        textViewForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        });
+
     }
 
     private void registerUser() {

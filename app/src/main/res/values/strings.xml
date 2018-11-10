@@ -30,11 +30,13 @@
     <string name="notifications">Notifications</string>
     <string name="my_offers">My Offers</string>
     <string name="share_this_app">Share this app</string>
-    <string name="communicate">Communicate</string>
+    <string name="more_options">More options</string>
     <string name="prompt_password_confirm">Confirm password</string>
     <string name="already_registered">Already registered ?</string>
     <string name="register_btn">Register</string>
     <string name="Function_not_active">Functionality is not active yet</string>
     <string name="password_unmatch">Password unmatch error</string>
     <string name="sign_out">Sign out</string>
+    <string name="empty_email">Email is empty</string>
+    <string name="empty_password">Password is empty</string>
 </resources>
