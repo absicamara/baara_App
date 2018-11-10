@@ -70,6 +70,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         getSupportActionBar().hide();
 
+//        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 

@@ -20,7 +20,7 @@
         <item
             android:id="@+id/my_account"
             android:icon="@drawable/ic_assignment_ind_black_24dp"
-            android:title="@string/my_offers" />
+            android:title="@string/profil" />
 
     </group>
 
