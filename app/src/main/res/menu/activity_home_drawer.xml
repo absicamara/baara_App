@@ -25,6 +25,11 @@
                 android:id="@+id/share_app"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/share_this_app" />
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/sign_out" />
         </menu>
     </item>
 

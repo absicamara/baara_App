@@ -34,4 +34,7 @@
     <string name="prompt_password_confirm">Confirm password</string>
     <string name="already_registered">Already registered ?</string>
     <string name="register_btn">Register</string>
+    <string name="Function_not_active">Functionality is not active yet</string>
+    <string name="password_unmatch">Password unmatch error</string>
+    <string name="sign_out">Sign out</string>
 </resources>

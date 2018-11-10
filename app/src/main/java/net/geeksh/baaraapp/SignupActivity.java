@@ -77,10 +77,10 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-//        if (password != passwordC) {
-//            Toast.makeText(this, " "+ password + " "+ passwordC, Toast.LENGTH_SHORT).show();
-//            return;
-//        }
+        if (!password.equals(passwordC)) {
+            Toast.makeText(this, R.string.password_unmatch, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

@@ -99,7 +99,7 @@
                 android:background="@drawable/my_button_bluedark"/>
 
             <TextView
-                android:id="@+id/forgot_password_btn"
+                android:id="@+id/editTextForgortPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password"
