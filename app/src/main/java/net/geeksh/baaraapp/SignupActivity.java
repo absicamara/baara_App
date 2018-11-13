@@ -1,5 +1,6 @@
 package net.geeksh.baaraapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText editTextPasswordConfirm;
     private Button buttonSignup;
     private TextView textViewForgot;
+    private ProgressDialog progressDialog;
 
 
     @Override
@@ -38,6 +40,8 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         getSupportActionBar().hide();
+        progressDialog = new ProgressDialog(this);
+
 
         //Let's initialize by getting layouts
         editTexteditTextUsername = (EditText) findViewById(R.id.signup_username_edtxt);
@@ -90,10 +94,16 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
+        progressDialog.setMessage("Registering user. Please wait...");
+        progressDialog.show();
+
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        progressDialog.dismiss();
+
                         if (task.isSuccessful()){
                             Toast.makeText(SignupActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));

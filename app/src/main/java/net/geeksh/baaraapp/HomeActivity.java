@@ -127,7 +127,8 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.share_app) {
 
-
+        }else  if(id == R.id.my_account) {
+            startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
         }else if (id == R.id.logout){
             firebaseAuth.signOut();
             finish();
