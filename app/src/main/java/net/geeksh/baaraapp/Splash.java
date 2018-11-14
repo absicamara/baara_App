@@ -20,8 +20,8 @@ public class Splash extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-//        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-//        finish();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
 
         splashVideo = (VideoView) findViewById(R.id.splashVD);
         getSupportActionBar().hide();

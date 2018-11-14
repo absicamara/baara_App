@@ -124,7 +124,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.notification) {
 
         } else if (id == R.id.my_offers) {
-
+            startActivity(new Intent(getApplicationContext(), MyofferActivity.class));
         } else if (id == R.id.share_app) {
 
         }else  if(id == R.id.my_account) {
