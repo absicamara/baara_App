@@ -41,4 +41,9 @@
     <string name="empty_password">Password is empty</string>
     <string name="profil">Profil</string>
     <string name="create_offer">CREATE OFFER</string>
+    <string name="job_title">Job Title</string>
+    <string name="job_description">Description</string>
+    <string name="start_date">Start Date</string>
+    <string name="offer_create_btn">CREATE</string>
+    <string name="job_requirements">Requirements</string>
 </resources>

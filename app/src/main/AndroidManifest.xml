@@ -30,7 +30,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".ProfilActivity" />
-        <activity android:name=".MyofferActivity"></activity>
+        <activity android:name=".MyofferActivity" />
+        <activity android:name=".CreateofferActivity"></activity>
     </application>
 
 </manifest>
