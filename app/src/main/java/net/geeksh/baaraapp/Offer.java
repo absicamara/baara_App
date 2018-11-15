@@ -31,6 +31,9 @@ public class Offer  {
     public double longitude;
     public boolean expired;
 
+    public Offer() {
+
+    }
 
     public Offer(String jobTitle, String requirement, String city, String country, String startDate, String endDate, String description) {
         this.jobTitle = jobTitle;

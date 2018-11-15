@@ -1,5 +1,6 @@
 package net.geeksh.baaraapp;
 
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,7 +67,9 @@ public class CreateofferActivity extends AppCompatActivity implements View.OnCli
 
 //        databaseReference = databaseReference.getRoot();
         databaseReference.child(user.getUid()+"/Offer/"+Offer.getOfferId()).setValue(offer);
-//        Toast.makeText(this, "done", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), MyofferActivity.class));
+          Toast.makeText(this, "done", Toast.LENGTH_SHORT).show();
+
 
     }
 
