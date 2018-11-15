@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"/>
 
     <EditText
-        android:id="@+id/jobTitle"
+        android:id="@+id/editTextJobTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextViewCreateOffer"
@@ -29,11 +29,11 @@
 
 
     <EditText
-        android:id="@+id/jobDescription"
+        android:id="@+id/editTextJobDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_below="@+id/jobTitle"
+        android:layout_below="@+id/editTextJobTitle"
         android:ems="10"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -42,11 +42,11 @@
          />
 
     <EditText
-        android:id="@+id/jobRequirement"
+        android:id="@+id/editTextJobRequirement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_below="@+id/jobDescription"
+        android:layout_below="@+id/editTextJobDescription"
         android:ems="10"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -54,33 +54,60 @@
         android:inputType="textMultiLine"
         />
 
+    <EditText
+        android:id="@+id/editTextOfferCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/editTextJobRequirement"
+        android:ems="10"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/offer_city"
+        />
+
+    <EditText
+        android:id="@+id/editTextOfferCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/editTextOfferCity"
+        android:ems="10"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/offer_city"
+        />
+
     <LinearLayout
         android:id="@+id/dateContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/jobRequirement"
+        android:layout_below="@id/editTextOfferCountry"
         android:gravity="center">
 
         <EditText
-            android:id="@+id/offerStartDate"
+            android:id="@+id/editTextofferStartDate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="@string/start_date"
-            android:inputType="date"
+            android:inputType="text"
         />
 
         <EditText
-            android:id="@+id/offerEndDate"
+            android:id="@+id/editTextofferEndDate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="@string/start_date"
-            android:inputType="date"
+            android:inputType="text"
             />
 
     </LinearLayout>
 
+
+
   <Button
+      android:id="@+id/buttonCreateOffer2"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="@string/offer_create_btn"
