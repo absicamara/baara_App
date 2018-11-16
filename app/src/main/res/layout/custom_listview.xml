@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F7DC6F"
+        android:background="#D0D3D4"
         android:layout_marginBottom="6dp">
 
         <ImageView
@@ -30,6 +30,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/txtViewJobDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dummy_text_long"/>

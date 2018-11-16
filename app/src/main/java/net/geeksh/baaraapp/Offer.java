@@ -9,6 +9,9 @@ import android.os.Bundle;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Offer  {
@@ -30,6 +33,10 @@ public class Offer  {
     public double latitude;
     public double longitude;
     public boolean expired;
+    public long created_at;
+
+
+
 
     public Offer() {
 
@@ -43,6 +50,8 @@ public class Offer  {
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
+        created_at = getTimeStamp();
+
         offerId++;
     }
 
@@ -50,6 +59,12 @@ public class Offer  {
     public static String getOfferId(){
         String id =  Integer.toString(offerId);
         return id;
+    }
+
+    public long getTimeStamp(){
+        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
+        long r = Long.parseLong(timeStamp);
+        return r;
     }
 
 

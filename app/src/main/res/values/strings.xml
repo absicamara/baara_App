@@ -51,4 +51,5 @@
     <string name="end_date">End Date</string>
     <string name="dummy_text">Lorem ipsum</string>
     <string name="dummy_text_long">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</string>
+    <string name="empty_field_error">Empty field found</string>
 </resources>

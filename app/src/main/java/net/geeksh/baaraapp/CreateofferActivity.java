@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,6 +62,40 @@ public class CreateofferActivity extends AppCompatActivity implements View.OnCli
         String endDate = editTextEndDate.getText().toString().trim();
         String city = editTextCity.getText().toString().trim();
         String country = editTextCountry.getText().toString().trim();
+
+        if (TextUtils.isEmpty(jobTitle)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(desc)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(req)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(startDate)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(endDate)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(city)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(country)){
+            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Offer offer = new Offer(jobTitle, req,city,country,startDate,endDate,desc);
         user = firebaseAuth.getCurrentUser();

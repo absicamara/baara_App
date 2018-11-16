@@ -69,7 +69,9 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
         user = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Offer/");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        Query query = databaseReference.orderByChild("created_at");
+
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final List<Offer> offer = new ArrayList<>();
@@ -89,15 +91,16 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
 
                 }
 //                    Toast.makeText(MyofferActivity.this, offer.jobTitle, Toast.LENGTH_SHORT).show();
-                final ArrayList<String> arr2 = new ArrayList();
-                for ( Offer o : offer
-                     ) {
-                    arr2.add(o.jobTitle);
-//                    arr2.add(o.description);
-//                    arr2.add(o.requirement);
-                }
+//                final ArrayList<String> arr2 = new ArrayList();
+//                for ( Offer o : offer
+//                     ) {
+//                    arr2.add(o.jobTitle +"@"+ o.description);
+////                    arr2.add(o.description);
+////                    arr2.add(o.requirement);
+//                }
 
-                ListAdapter buckysAdapter = new ArrayAdapter<String>(MyofferActivity.this, android.R.layout.simple_list_item_1, arr2);
+
+                ListAdapter buckysAdapter = new CustomViewAdapter(MyofferActivity.this, R.layout.custom_listview, offer);
                 ListView buckysListView = (ListView) findViewById(R.id.myOfferListView);
                 buckysListView.setAdapter(buckysAdapter);
 
