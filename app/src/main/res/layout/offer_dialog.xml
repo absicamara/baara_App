@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="#000"
+
+    >
+
+
+    <LinearLayout
+        android:layout_margin="3dp"
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtViewDialogJobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text"
+            android:gravity="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="@string/job_description"/>
+
+        <TextView
+            android:id="@+id/txtViewDialogJobDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text_long"
+            android:gravity="left"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="@string/job_requirements"/>
+
+        <TextView
+            android:id="@+id/txtViewDialogJobReq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text_long"
+            android:gravity="left"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="@string/offer_end_date"/>
+
+        <TextView
+            android:id="@+id/txtViewDialogJobEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text"
+            android:gravity="left"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonDialogDelete"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="Delete"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:background="@android:color/holo_red_dark"/>
+
+            <Button
+                android:id="@+id/buttonDialogEdit"
+                android:layout_width="150dp"
+                android:layout_margin="1dp"
+                android:layout_height="40dp"
+                android:text="Open"
+                android:textColor="#fff"
+                android:background="@android:color/holo_green_dark"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

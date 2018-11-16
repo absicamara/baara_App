@@ -43,7 +43,7 @@ public class CustomViewAdapter extends ArrayAdapter<Offer> {
 
 
             // dynamically update the text from the array
-            txtViewJobTitle.setText(singleFoodItem.jobTitle);
+            txtViewJobTitle.setText(singleFoodItem.jobTitle + " - " + singleFoodItem.offerId);
             txtViewJobDescription.setText(singleFoodItem.description + "...");
             // using the same image every time
             buckysImage.setImageResource(R.drawable.ic_business_center_black_24dp);

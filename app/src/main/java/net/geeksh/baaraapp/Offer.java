@@ -45,7 +45,7 @@ public class Offer  {
         this.endDate = endDate;
         this.description = description;
 //        created_at = getTimeStamp();
-        this.offerId = ++id;
+        this.offerId = offerId;
 
     }
 
