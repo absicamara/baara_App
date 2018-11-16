@@ -2,6 +2,8 @@ package net.geeksh.baaraapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,6 +33,8 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     FirebaseUser user;
+    ImageView imgViewOfferOpen;
+    android.app.AlertDialog alertDialog;
 
     Button buttonCreateOffer;
     @Override
@@ -38,6 +43,8 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_myoffer);
 
         buttonCreateOffer = (Button) findViewById(R.id.buttonCreateOffer);
+        imgViewOfferOpen = (ImageView) findViewById(R.id.imgViewOfferOpen);
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -69,7 +76,7 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
         user = firebaseAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference(user.getUid()+"/Offer/");
 
-        Query query = databaseReference.orderByChild("created_at");
+        final Query query = databaseReference.orderByChild("timeStamp");
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -79,6 +86,7 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
 
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
                     offer.add(new Offer(
+                            Integer.parseInt(ds.child("offerId").getValue().toString()),
                             ds.child("jobTitle").getValue().toString(),
                             ds.child("requirement").getValue().toString(),
                             ds.child("city").getValue().toString(),
@@ -90,14 +98,6 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
 
 
                 }
-//                    Toast.makeText(MyofferActivity.this, offer.jobTitle, Toast.LENGTH_SHORT).show();
-//                final ArrayList<String> arr2 = new ArrayList();
-//                for ( Offer o : offer
-//                     ) {
-//                    arr2.add(o.jobTitle +"@"+ o.description);
-////                    arr2.add(o.description);
-////                    arr2.add(o.requirement);
-//                }
 
 
                 ListAdapter buckysAdapter = new CustomViewAdapter(MyofferActivity.this, R.layout.custom_listview, offer);
@@ -111,6 +111,13 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
                                 String food = String.valueOf(parent.getItemAtPosition(position));
                                 String ff = offer.get((int)id).requirement;
                                 Toast.makeText(getApplicationContext(), ff, Toast.LENGTH_LONG).show();
+
+                                AlertDialog.Builder dialog = new AlertDialog.Builder(MyofferActivity.this);
+                                dialog.setTitle("Offer details");
+                                dialog.setMessage(offer.get((int)id).description);
+
+                                dialog.show();
+
                             }
                         }
                 );
@@ -129,6 +136,16 @@ public class MyofferActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
+    }
+
+    public void removeOffer(DatabaseReference node){
+
+        node.removeValue(new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+                Toast.makeText(MyofferActivity.this, "Done", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

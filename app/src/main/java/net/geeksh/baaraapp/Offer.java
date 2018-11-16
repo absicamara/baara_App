@@ -1,18 +1,11 @@
 package net.geeksh.baaraapp;
 
-import android.support.v7.app.AppCompatActivity;
-import android.widget.EditText;
-import android.widget.Toast;
-import android.os.Bundle;
-
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Offer  {
 
@@ -21,7 +14,8 @@ public class Offer  {
 
 
 
-    public static int offerId = 0;
+    public static int id = 0;
+    public int offerId;
     public String jobTitle;
     public String company;
     public String requirement;
@@ -42,6 +36,19 @@ public class Offer  {
 
     }
 
+    public Offer(int offerId, String jobTitle, String requirement, String city, String country, String startDate, String endDate, String description) {
+        this.jobTitle = jobTitle;
+        this.requirement = requirement;
+        this.city = city;
+        this.country = country;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.description = description;
+//        created_at = getTimeStamp();
+        this.offerId = ++id;
+
+    }
+
     public Offer(String jobTitle, String requirement, String city, String country, String startDate, String endDate, String description) {
         this.jobTitle = jobTitle;
         this.requirement = requirement;
@@ -50,15 +57,16 @@ public class Offer  {
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
-        created_at = getTimeStamp();
+//        created_at = getTimeStamp();
+        this.offerId = ++id;
 
-        offerId++;
     }
 
 
-    public static String getOfferId(){
-        String id =  Integer.toString(offerId);
-        return id;
+    public  String getOfferId(){
+        String r;
+        return r =  Integer.toString(this.offerId);
+
     }
 
     public long getTimeStamp(){

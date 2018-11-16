@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Date;
 import java.util.List;
 
 public class CustomViewAdapter extends ArrayAdapter<Offer> {
@@ -26,16 +27,24 @@ public class CustomViewAdapter extends ArrayAdapter<Offer> {
             LayoutInflater myCustomInflater = LayoutInflater.from(getContext());
             View customView = myCustomInflater.inflate(R.layout.custom_listview, parent, false);
             // get references.
-            Offer singleFoodItem = getItem(position);
-            TextView itemText = (TextView) customView.findViewById(R.id.txtViewJobTitle);
-            TextView itemText2 = (TextView) customView.findViewById(R.id.txtViewJobDescription);
+            final Offer singleFoodItem = getItem(position);
+            TextView txtViewJobTitle = (TextView) customView.findViewById(R.id.txtViewJobTitle);
+            TextView txtViewJobDescription = (TextView) customView.findViewById(R.id.txtViewJobDescription);
+            ImageView imgViewOfferOpen = (ImageView) customView.findViewById(R.id.imgViewOfferOpen);
             ImageView buckysImage = (ImageView) customView.findViewById(R.id.ImgViewOfferLogo);
 
+            //Checking offer availability
+
+            imgViewOfferOpen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                }
+            });
 
 
             // dynamically update the text from the array
-            itemText.setText(singleFoodItem.jobTitle);
-            itemText2.setText(singleFoodItem.description);
+            txtViewJobTitle.setText(singleFoodItem.jobTitle);
+            txtViewJobDescription.setText(singleFoodItem.description + "...");
             // using the same image every time
             buckysImage.setImageResource(R.drawable.ic_business_center_black_24dp);
             // Now we can finally return our custom View or custom item

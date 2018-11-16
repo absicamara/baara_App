@@ -62,6 +62,7 @@ public class CreateofferActivity extends AppCompatActivity implements View.OnCli
         String endDate = editTextEndDate.getText().toString().trim();
         String city = editTextCity.getText().toString().trim();
         String country = editTextCountry.getText().toString().trim();
+//        int offerId = Integer.parseInt(Offer.getOfferId());
 
         if (TextUtils.isEmpty(jobTitle)){
             Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
@@ -98,12 +99,17 @@ public class CreateofferActivity extends AppCompatActivity implements View.OnCli
         }
 
         Offer offer = new Offer(jobTitle, req,city,country,startDate,endDate,desc);
+
+//        offer.offerId = Integer.parseInt(Offer.getOfferId());
+
+        //setID to be embedded
         user = firebaseAuth.getCurrentUser();
 
 //        databaseReference = databaseReference.getRoot();
-        databaseReference.child(user.getUid()+"/Offer/"+Offer.getOfferId()).setValue(offer);
-            startActivity(new Intent(getApplicationContext(), MyofferActivity.class));
-          Toast.makeText(this, "done", Toast.LENGTH_SHORT).show();
+        databaseReference.child(user.getUid()+"/Offer/"+offer.getOfferId()).setValue(offer);
+        finish();
+        startActivity(new Intent(getApplicationContext(), MyofferActivity.class));
+        Toast.makeText(this, "done", Toast.LENGTH_SHORT).show();
 
 
     }

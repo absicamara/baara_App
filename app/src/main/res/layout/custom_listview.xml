@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D0D3D4"
-        android:layout_marginBottom="6dp">
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/ImgViewOfferLogo"
@@ -15,28 +16,39 @@
             android:layout_height="80dp"
             android:src="@drawable/ic_business_center_black_24dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtViewJobTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dummy_text"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/txtViewJobDescription"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dummy_text_long"/>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtViewJobTitle"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_text"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtViewJobDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_text_long"/>
+
+            </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgViewOfferOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/common_full_open_on_phone"
+            android:background="#ffff8800"
+            />
 
         </LinearLayout>
 
-    </LinearLayout>
 
 </RelativeLayout>
